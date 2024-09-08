@@ -81,17 +81,6 @@ if (array_key_exists("json", $_REQUEST)) {
   header("Content-Type: application/json");
   var_dump($markets);
 } else {
-  echo "<html>
-        <head>
-        <title>Statistics</title>
-        </head>
-        <body style='margin-top:-6px;'>
-        <div style='height:calc(100% - 40px);overflow-y:auto;'>
-        <table>
-        <thead style='position:sticky;top:2;background-color: #f2f2f2;'>
-        <tr><th>Market</th><th>Exchange</th><th>Price</th><th>Low</th><th>High</th><th>Volume</th></tr>
-        </thead>
-        <tbody>";
   ksort($markets);
   foreach($markets as $key => $value) {
     $pair = explode("-", $key);
@@ -101,6 +90,34 @@ if (array_key_exists("json", $_REQUEST)) {
     if (!array_key_exists($pair[1], $coins)) {
       $coins[$pair[1]] = Array();
     }
+  }
+  echo "<html>
+        <head>
+        <title>Statistics</title>
+        </head>
+        <body style='margin-top:-6px;'>";
+  $height = 40;
+  if (array_key_exists("e", $_REQUEST) && array_key_exists(strtolower($_REQUEST["e"]), $exchanges)) {
+    if (file_exists("exchanges/".strtolower($_REQUEST["e"]).".inc")) {
+      include("exchanges/".strtolower($_REQUEST["e"]).".inc");
+    }
+  } else if (array_key_exists("c", $_REQUEST) && array_key_exists(strtolower($_REQUEST["c"]), $coins)) {
+    if (file_exists("coins/".strtolower($_REQUEST["c"]).".inc")) {
+      include("coins/".strtolower($_REQUEST["c"]).".inc");
+    }
+  } else if (array_key_exists("m", $_REQUEST) && array_key_exists(strtolower($_REQUEST["m"]), $markets)) {
+    if (file_exists("markets/".strtolower($_REQUEST["m"]).".inc")) {
+      include("markets/".strtolower($_REQUEST["m"]).".inc");
+    }
+  }
+  echo "<div style='height:calc(100% - ".$height."px);overflow-y:auto;'>
+        <table>
+        <thead style='position:sticky;top:2;background-color: #f2f2f2;'>
+        <tr><th>Market</th><th>Exchange</th><th>Price</th><th>Low</th><th>High</th><th>Volume</th></tr>
+        </thead>
+        <tbody>";
+  foreach($markets as $key => $value) {
+    $pair = explode("-", $key);
     if (array_key_exists("c", $_REQUEST) && $pair[0] != strtolower($_REQUEST['c']) && $pair[1] != strtolower($_REQUEST['c'])) {
       continue;
     }
