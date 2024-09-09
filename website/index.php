@@ -90,6 +90,14 @@ if (array_key_exists("json", $_REQUEST)) {
     if (!array_key_exists($pair[1], $coins)) {
       $coins[$pair[1]] = Array();
     }
+    foreach($markets[$key] as $key2 => $value2) {
+      if (!array_key_exists($key2, $coins[$pair[0]])) {
+        $coins[$pair[0]][$key2] = Array();
+      }
+      if (!array_key_exists($key2, $coins[$pair[1]])) {
+        $coins[$pair[1]][$key2] = Array();
+      }
+    }
   }
   echo "<html>
         <head>
