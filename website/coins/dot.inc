@@ -15,4 +15,7 @@ echo $coin;
 ?>
 </span>
 <br />
+<table>
+<tr><th style="text-align:left;">Website:</th><td style="text-align:left;"><a href="https://polkadot.network">polkadot.network</a></td></tr>
+</table>
 </div>
