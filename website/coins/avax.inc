@@ -17,5 +17,6 @@ echo $coin;
 <br />
 <table>
 <tr><th style="text-align:left;">Website:</th><td style="text-align:left;"><a href="https://www.avalabs.org">www.avalabs.org</a></td></tr>
+<tr><th style="text-align:left;">Contract:</th><td style="text-align:left;">0x1ce0c2827e2ef14d5c4f29a091d735a204794041 (BSC)</td></tr>
 </table>
 </div>

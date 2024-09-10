@@ -17,5 +17,6 @@ echo $coin;
 <br />
 <table>
 <tr><th style="text-align:left;">Website:</th><td style="text-align:left;"><a href="https://cardano.org">cardano.org</a></td></tr>
+<tr><th style="text-align:left;">Contract:</th><td style="text-align:left;">0x3ee2200efb3400fabb9aacf31297cbdd1d435d47 (BSC)</td></tr>
 </table>
 </div>

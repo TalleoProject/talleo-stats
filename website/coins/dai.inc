@@ -17,5 +17,6 @@ echo $coin;
 <br />
 <table>
 <tr><th style="text-align:left;">Website:</th><td style="text-align:left;"><a href="https://makerdao.com">makerdao.com</a></td></tr>
+<tr><th style="text-align:left;">Contract:</th><td style="text-align:left;">0x6b175474e89094c44da98b954eedeac495271d0f (Ethereum)</td></tr>
 </table>
 </div>

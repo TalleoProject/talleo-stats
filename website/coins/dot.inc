@@ -17,5 +17,6 @@ echo $coin;
 <br />
 <table>
 <tr><th style="text-align:left;">Website:</th><td style="text-align:left;"><a href="https://polkadot.network">polkadot.network</a></td></tr>
+<tr><th style="text-align:left;">Contract:</th><td style="text-align:left;">0x7083609fce4d1d8dc0c979aab8c869ea2c873402 (BSC)</td></tr>
 </table>
 </div>

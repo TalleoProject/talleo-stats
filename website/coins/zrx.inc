@@ -17,5 +17,6 @@ echo $coin;
 <br />
 <table>
 <tr><th style="text-align:left;">Website:</th><td style="text-align:left;"><a href="https://0xprotocol.org">0xprotocol.org</a></td></tr>
+<tr><th style="text-align:left;">Contract:</th><td style="text-align:left;">0xe41d2489571d322189246dafa5ebde1f4699f498 (Ethereum)</td></tr>
 </table>
 </div>

@@ -15,4 +15,8 @@ echo $coin;
 ?>
 </span>
 <br />
+<table>
+<tr><th style="text-align:left;" rowspan="2" valign="top">Contract:</th><td>0x55d398326f99059ff775485246999027b3197955 (BSC)</td></tr>
+<tr><td style="text-align:left;">0xdac17f958d2ee523a2206206994597c13d831ec7 (Ethereum)</td></tr>
+</table>
 </div>
