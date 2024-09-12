@@ -22,11 +22,21 @@ function fetch($url) {
 }
 
 function makelink($market) {
+  global $markets;
+  if (array_key_exists("m", $_REQUEST) && strtoupper($_REQUEST["m"]) == strtoupper($market)) {
+    $str = "";
+  } else {
+    $str = "<a href='?m=".$market;
+    if (array_key_exists("e", $_REQUEST) && array_key_exists(strtolower($_REQUEST["e"]), $markets[$market])) {
+      $str .= "&e=".strtolower($_REQUEST["e"]);
+    }
+    $str .= "'>&rarr;</a>&nbsp;";
+  }
   $coins = explode('-', $market);
   if (array_key_exists("c", $_REQUEST) && strtoupper($_REQUEST["c"]) == strtoupper($coins[0])) {
-    $str  = strtoupper($coins[0]);
+    $str .= strtoupper($coins[0]);
   } else {
-    $str  = "<a href='?c=".$coins[0];
+    $str .= "<a href='?c=".$coins[0];
     if (array_key_exists("e", $_REQUEST)) {
       $str .= "&e=".$_REQUEST["e"];
     }
@@ -116,6 +126,8 @@ if (array_key_exists("json", $_REQUEST)) {
   } else if (array_key_exists("m", $_REQUEST) && array_key_exists(strtolower($_REQUEST["m"]), $markets)) {
     if (file_exists("markets/".strtolower($_REQUEST["m"]).".inc")) {
       include("markets/".strtolower($_REQUEST["m"]).".inc");
+    } else if (file_exists("markets/markets.inc")) {
+      include("markets/markets.inc");
     }
   }
   echo "<div style='height:calc(100% - ".$height."px);overflow-y:auto;'>
